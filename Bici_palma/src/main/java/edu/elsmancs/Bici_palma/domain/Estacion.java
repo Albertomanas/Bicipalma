@@ -1,7 +1,5 @@
 package edu.elsmancs.Bici_palma.domain;
 
-//import bicicleta.Bicicleta;
-//import tarjetaUsuario.TarjetaUsuario;
 
 public class Estacion {
 
@@ -37,26 +35,13 @@ public class Estacion {
         System.out.println("numeroAnclajes: " + getNumeroAnclajes());
     }
 
-    public int anclajesLibre() { //Tiene que devolver int porque buscamos un numérico.
-        int anclajesLibres = 0;
-        for (Bicicleta anclaje : this.anclajes) ;
-            if (anclaje == null) { //Así en el caso de que no haya ninguna Bicicleta estará en null.
-                anclajesLibres++;
-            } else ;
-        }
-        return anclajesLibres;
-}
-
-        public void anclarBicicleta(Bicicleta bicicleta) {
-            int posicion = 0;
-            int numeroAnclaje = posicion + 1;
-
-            for (Bicicleta anclaje: this.anclajes) {
-                if (anclaje == null) {
-                    this.anclajes[posicion] = bicicleta;
-                    mostrarAnclaje()
-                }
-            }
-        }
-
+    public int anclajesLibres() {  //Tiene que devolver int porque buscamos un numérico.
+       int valor = 0;
+       for (Bicicleta anclaje: this.anclajes) {
+           if (anclaje == null) { //Si es null dicho anclaje está libre.
+               valor++;
+           }
+       }
+       return valor;
+    }
 }
