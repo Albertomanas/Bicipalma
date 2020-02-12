@@ -10,5 +10,4 @@ public class BicicletaTest {
         Bicicleta bicicleta = new Bicicleta(234);
         assertEquals(234, 234);
     }
-
 }
