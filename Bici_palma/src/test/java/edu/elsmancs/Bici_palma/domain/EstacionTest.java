@@ -20,5 +20,10 @@ public class EstacionTest {
 }
 
     @Test
-    public void
+    public void consultarAnclajeLibreTest() {
+        Estacion estacion = new Estacion(4, "Coll", 6);
+        assertEquals(estacion.anclajesLibres(), 6, 0);
+    }
+
+
 }
