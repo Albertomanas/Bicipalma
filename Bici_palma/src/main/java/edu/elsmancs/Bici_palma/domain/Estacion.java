@@ -1,6 +1,5 @@
 package edu.elsmancs.Bici_palma.domain;
 
-
 public class Estacion {
 
     private int id = 0;
@@ -43,5 +42,28 @@ public class Estacion {
            }
        }
        return valor;
+    }
+
+    public int anclarBicicleta(Bicicleta bicicleta) {
+        int posicion = 0;
+        int numeroAnclaje = posicion + 1;
+
+        for (Bicicleta anclaje: this.anclajes) {
+            if (anclaje == null) {
+                this.anclajes[posicion] = bicicleta;
+                //En caso de estar vació, se asignará la bicicleta entrante.
+                mostrarAnclaje(bicicleta, numeroAnclaje); //SETTER que se hará posteriormente
+                break;
+
+                /*Imprescindible, sino no se asignarán las siguientes bicicletas
+                 * en las posiciones correlativas
+                 */
+            }
+        }
+    }
+
+    public void mostrarAnclaje(Bicicleta bicicleta, int numeroAnclajes) {
+        System.out.println("bicicleta: " + bicicleta.getId() + " anclada en el anclaje: " + numeroAnclaje);
+        //numeroAnclaje es un contador que se hará en consultarAnclajes
     }
 }
