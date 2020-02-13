@@ -43,5 +43,9 @@ public class EstacionTest {
     }
 
 
+    /*@Test
+    public void consultarAnclajesTest() {}
+      */  // No es necesario dado a que cada parametro está testeado
+
 
 }

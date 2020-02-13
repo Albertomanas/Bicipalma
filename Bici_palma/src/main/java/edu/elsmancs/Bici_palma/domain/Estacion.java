@@ -78,5 +78,21 @@ public class Estacion {
         return tarjetaUsuario.getActivada();
     }
 
+    public void consultarAnclajes() {
+        int posicion = 0;
+        int numeroAnclaje = 0;
+
+        for (Bicicleta bicicleta : this.anclajes) {
+            numeroAnclaje = posicion + 1;
+            if (bicicleta != null) {
+                System.out.println("Anclaje " + numeroAnclaje + "" + this.anclajes[posicion].getId());
+            }
+            else {
+                System.out.println("Anclaje " + numeroAnclaje + "" + " libre");
+
+                posicion++;
+            }
+        }
+    }
 
 }
