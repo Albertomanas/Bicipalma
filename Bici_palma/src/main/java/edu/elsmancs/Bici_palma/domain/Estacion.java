@@ -27,6 +27,9 @@ public class Estacion {
     public int getNumeroAnclajes() {
         return this.numeroAnclajes;
     }
+    public Bicicleta[] getAnclajes() {
+        return this.anclajes;
+    }
 
     public void consultarEstacion() { //Seguir la estructura de la salida que recibimos
         System.out.println("id: " + getNumEstacion());
@@ -44,7 +47,7 @@ public class Estacion {
        return valor;
     }
 
-    public int anclarBicicleta(Bicicleta bicicleta) {
+    public void anclarBicicleta(Bicicleta bicicleta) {
         int posicion = 0;
         int numeroAnclaje = posicion + 1;
 
@@ -59,11 +62,21 @@ public class Estacion {
                  * en las posiciones correlativas
                  */
             }
+            else
+                posicion++;
+                numeroAnclaje++;
         }
     }
 
     public void mostrarAnclaje(Bicicleta bicicleta, int numeroAnclajes) {
-        System.out.println("bicicleta: " + bicicleta.getId() + " anclada en el anclaje: " + numeroAnclaje);
+        System.out.println("bicicleta: " + bicicleta.getId() + " anclada en el anclaje: " + getNumeroAnclajes());
         //numeroAnclaje es un contador que se hará en consultarAnclajes
     }
+
+//Comprueba que la tarjeta está activa
+    public boolean leerTarjetaUsuario(TarjetaUsuario tarjetaUsuario) {
+        return tarjetaUsuario.getActivada();
+    }
+
+
 }
