@@ -39,6 +39,9 @@ public class EstacionTest {
             anclajes[posicionAnclaje] = bicicleta;
             posicionAnclaje++;
         }
-        assertArrayEquals(anclajes, estacion.anclarBicicleta()); // comparar las arrays
+        assertArrayEquals(anclajes, estacion.getAnclajes());; // comparar las arrays
     }
+
+
+
 }

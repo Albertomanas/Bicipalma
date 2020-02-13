@@ -8,6 +8,6 @@ public class BicicletaTest {
     @Test
     public void comprobarIdBicicletaTest() {
         Bicicleta bicicleta = new Bicicleta(234);
-        assertEquals(234, 234);
+        assertEquals(bicicleta.getId(), 234);
     }
 }
