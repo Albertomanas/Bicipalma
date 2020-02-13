@@ -1,5 +1,7 @@
 package edu.elsmancs.Bici_palma.domain;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Estacion {
 
     private int id = 0;
@@ -79,20 +81,35 @@ public class Estacion {
     }
 
     public void consultarAnclajes() {
-        int posicion = 0;
         int numeroAnclaje = 0;
 
         for (Bicicleta bicicleta : this.anclajes) {
-            numeroAnclaje = posicion + 1;
-            if (bicicleta != null) {
-                System.out.println("Anclaje " + numeroAnclaje + "" + this.anclajes[posicion].getId());
+            numeroAnclaje = numeroAnclaje + 1;
+            if (bicicleta != null) {  //Recorre la Array buscando los anclajes ocupados.
+                System.out.println("Anclaje " + numeroAnclaje + " " + bicicleta.getId());
             }
             else {
                 System.out.println("Anclaje " + numeroAnclaje + "" + " libre");
-
-                posicion++;
             }
         }
     }
 
+    private void generarAnclaje() {
+        int posicionAnclaje = ThreadLocalRandom.current().nextInt(0, (this.numeroAnclajes));
+        if (this.anclajes[posicionAnclaje] != null) {
+            this.anclajes[posicionAnclaje] = null;
+        }
+        else {
+            generarAnclaje();
+        }
+    }
+
+    public void retirarBicicleta(TarjetaUsuario tarjetaUsuario) {
+
+        if (tarjetaUsuario.getActivada() == true) {
+            generarAnclaje();
+        }
+    }
+
 }
+

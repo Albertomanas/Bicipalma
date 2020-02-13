@@ -62,5 +62,6 @@ public class BiciPalma {
         estacion.consultarAnclajes();
 
         System.out.println("anclajesLibres: " + estacion.anclajesLibres());
+
     }
 }
