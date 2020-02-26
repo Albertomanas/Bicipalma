@@ -94,7 +94,7 @@ public class Estacion {
         }
     }
 
-    private void generarAnclaje() {
+    private void generarAnclaje() { //pendiente cambiar, es recursion y consume recursos
         int posicionAnclaje = ThreadLocalRandom.current().nextInt(0, (this.numeroAnclajes));
         if (this.anclajes[posicionAnclaje] != null) {
             this.anclajes[posicionAnclaje] = null;
