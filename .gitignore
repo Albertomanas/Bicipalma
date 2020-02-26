@@ -6,7 +6,7 @@
 *.log
 
 #Maven
-target/
+Bici_palma/target/
 
 # IntelIj files
 .idea
